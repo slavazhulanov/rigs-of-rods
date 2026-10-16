@@ -70,11 +70,10 @@ Tools installation needed libc++ headers explicitly; where necessary append
 other flags. This workaround needs toolchain revalidation before being removed.
 The wrapper checks for at least 4 GiB free space before configure and compile.
 
-Build outputs are `bin/RoR` and its resources/content/languages. The raw executable
-is not an installed app: MyGUI's app-relative framework install name needs the
-bundle layout supplied by the separate CMake/CPack contribution. This build
-profile supplies no bundle portability or signing guarantee. Its inherited
-non-Apple install rules alone do not produce a usable native app. Compile checks
+Build outputs are `bin/RoR.app/Contents/MacOS/RoR` and resources/content/languages
+in `bin`. Use the native CMake install/CPack rules for dependency fixup and staged
+signing; see [macOS packaging](macOS-packaging.md). The build output alone supplies
+no bundle portability or signing guarantee. Compile checks
 do not establish GL3 UI/RTSS/material/terrain/water/Caelum/Paged rendering,
 window lifecycle, Retina/input behavior or runtime capability. The wrapper
 configures and compiles only; it never launches RoR.
