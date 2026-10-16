@@ -608,6 +608,7 @@ endif()
 # Copy resources to bin directory
 # -----------------------
 recursive_zip_folder("${CMAKE_SOURCE_DIR}/resources" "${RUNTIME_OUTPUT_DIRECTORY}/resources")
+include("${CMAKE_SOURCE_DIR}/cmake/RoRRTShaderResources.cmake")
 if (ROR_CREATE_CONTENT_FOLDER)
     recursive_zip_folder("${CMAKE_SOURCE_DIR}/content" "${RUNTIME_OUTPUT_DIRECTORY}/content")
 endif ()
